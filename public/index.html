@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>英语阅读助手</title>
+    <link rel="stylesheet" href="/styles.css?v=20260515-reduced-cn" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark">R</span>
+          <div>
+            <h1>英语阅读助手</h1>
+            <p>句子主干 · 固定词组 · 单词本</p>
+          </div>
+        </div>
+
+        <label class="input-label" for="sourceText">本次粘贴内容</label>
+        <textarea id="sourceText" class="paste-box" spellcheck="false" placeholder="Paste the next paragraph here..."></textarea>
+        <div class="article-actions">
+          <button id="appendArticleBtn" class="secondary-btn">追加到文章</button>
+          <button id="joinArticleBtn" class="ghost-btn">接到上一段</button>
+          <button id="replaceArticleBtn" class="ghost-btn">替换文章</button>
+          <button id="clearArticleBtn" class="ghost-btn">清空</button>
+        </div>
+
+        <label class="input-label" for="articleText">文章草稿</label>
+        <textarea id="articleText" class="article-box" spellcheck="false">When students look unfamiliar words up in context, they can figure out meanings more accurately.</textarea>
+        <div class="analysis-actions">
+          <button id="analyzeBtn" class="primary-btn">排版正文</button>
+          <button id="clearCacheBtn" class="ghost-btn" type="button">清除缓存</button>
+        </div>
+        <p id="apiNotice" class="notice"></p>
+
+        <section class="vocab-panel">
+          <div class="panel-title">
+            <h2>单词本</h2>
+            <div class="book-actions">
+              <button id="reviewBookBtn" class="ghost-btn">复习</button>
+              <button id="clearBookBtn" class="ghost-btn">清空</button>
+            </div>
+          </div>
+          <div id="wordBook" class="word-book empty">还没有添加单词。</div>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <div class="toolbar">
+          <div>
+            <span class="eyebrow">Analysis</span>
+            <h2>全文结构分析</h2>
+          </div>
+        </div>
+
+        <div id="sentenceTabs" class="tabs"></div>
+        <section id="analysisView" class="analysis-view empty-state">
+          多次粘贴的段落可以先追加到同一篇文章草稿，再点击“排版正文”；正文会按段落和句子固定展示，选择某一句后再按需分析。
+        </section>
+      </main>
+    </div>
+
+    <div id="detailDrawer" class="drawer" aria-hidden="true">
+      <div class="drawer-card">
+        <button id="closeDrawerBtn" class="close-btn" aria-label="关闭">×</button>
+        <div id="detailContent"></div>
+      </div>
+    </div>
+
+    <script src="/app.js?v=20260515-reduced-cn" type="module"></script>
+  </body>
+</html>

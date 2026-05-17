@@ -1,0 +1,6 @@
+.env
+cache/
+logs/
+node_modules/
+*.lnk
+desktop.ini
